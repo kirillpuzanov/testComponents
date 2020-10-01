@@ -1,0 +1,119 @@
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #091921;
+}
+
+.clock_wrapper {
+}
+
+.clock_digital {
+    padding: 10px 20px;
+    color: #e4cd00;
+    font-size: 85px;
+    font-weight: bold;
+    box-shadow: 0 -10px 10px rgba(134, 134, 134, 0.35),
+    inset 0 -10px 10px #365553,
+    0 10px 10px rgba(134, 134, 134, 0.35),
+    inset 0 10px 10px #365553;
+}
+
+.clock_analog {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./../../assets/img/clock.png"),
+    radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9, 25, 33, 1) 38%);
+    background-size: cover;
+
+    box-shadow: 0 -10px 10px rgba(134, 134, 134, 0.35),
+    inset 0 -10px 10px #365553,
+    0 10px 10px rgba(134, 134, 134, 0.35),
+    inset 0 10px 10px #365553;
+}
+
+.clock_analog:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.clock_analog .hour,
+.clock_analog .min,
+.clock_analog .sec {
+    position: absolute;
+}
+
+.clock_analog .hour, .hr {
+    width: 160px;
+    height: 160px;
+}
+
+.clock_analog .min, .mn {
+    width: 190px;
+    height: 190px;
+}
+
+.clock_analog .sec, .sc {
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: #fff;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #fff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background-color: #fff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.clock_btn {
+    margin-top: 100px;
+}
+
+.clock_btn button {
+    margin: 0 20px;
+    padding: 5px 10px;
+    color:#ffffff;
+    background-color: #21609266;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+}
