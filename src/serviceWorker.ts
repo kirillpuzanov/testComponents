@@ -89,8 +89,8 @@ function registerValidSW(swUrl: string, config?: Config) {
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              // "Home is cached for offline use." message.
+              console.log('Home is cached for offline use.');
 
               // Execute callback
               if (config && config.onSuccess) {
@@ -112,7 +112,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
     headers: { 'Service-Worker': 'script' }
   })
     .then(response => {
-      // Ensure service worker exists, and that we really are getting a JS file.
+      // Ensure service worker exists, and that we really are getting a ReactForTest file.
       const contentType = response.headers.get('content-type');
       if (
         response.status === 404 ||

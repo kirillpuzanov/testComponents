@@ -1,5 +1,7 @@
 import React from "react";
 import s from './style.module.css';
+import {DigitalClock} from "./DigitalClock";
+import {AnalogClock} from "./AnalogClock";
 
 type ClockType = {
     hours: string | number
@@ -23,23 +25,17 @@ export const Clock = (props: ClockType) => {
         <div className={s.clock}>
             <div className={s.clock_wrapper}>{
                 styleClock ?
-                    <div className={s.clock_digital}>
-                        <span>{hours} : </span>
-                        <span>{minutes} : </span>
-                        <span>{seconds}</span>
-                    </div> :
-                    <div className={s.clock_analog}>
-                        <div className={s.hour}
-                             style={{transform: `rotateZ(${hoursForAnalog + minutesForAnalog / 12}deg)`}}>
-                            <div className={s.hr}></div>
-                        </div>
-                        <div className={s.min} style={{transform: `rotateZ(${minutesForAnalog}deg)`}}>
-                            <div className={s.mn}></div>
-                        </div>
-                        <div className={s.sec} style={{transform: `rotateZ(${secondsForAnalog}deg)`}}>
-                            <div className={s.sc}></div>
-                        </div>
-                    </div>
+                   <DigitalClock
+                   hours={hours}
+                   minutes={minutes}
+                   seconds={seconds}
+                   />
+                    :
+                    <AnalogClock
+                    hoursForAnalog={hoursForAnalog}
+                    minutesForAnalog={minutesForAnalog}
+                    secondsForAnalog={secondsForAnalog}
+                    />
             }</div>
             <div className={s.clock_btn}>
                 <button onClick={showDigitalClock}>showLightClock</button>
@@ -48,3 +44,4 @@ export const Clock = (props: ClockType) => {
         </div>
     )
 }
+
